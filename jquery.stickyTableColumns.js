@@ -12,7 +12,7 @@
   $.fn.stickyTableColumns = function(options) {
 
     var defaults = {
-      colomuns : 1,
+      colomuns: 1,
     };
 
     var settings = $.extend(true, {}, defaults, options);
