@@ -25,7 +25,7 @@
       var $parent = $(this).parent();
       var tableMarginTop = parseInt($table.css('margin-top'));
 
-      if ($parent.width() < $table.outerWidth()) {
+      // if ($parent.width() < $table.outerWidth()) {
         $table.wrap(
           '<div class="stickyTableCol-outer-outer">' +
             '<div class="stickyTableCol-outer"></div>' +
@@ -63,7 +63,6 @@
             $(this).children().eq(i)
               .addClass('stickyTableCol-cell')
               .css({
-                // width: widthArray[i],
                 left: leftArray[i],
                 top: topArray[index],
               });
@@ -81,14 +80,20 @@
           i++;
         }
 
+        var rowspan = 1;
         $row.each(function(index) {
-          var $_data = $(this).children().eq(i);
-          var paddingLeft = parseFloat($_data.css('padding-left'), 10) + leftArray[i];
-          $_data.css('padding-left', paddingLeft + 'px');
+          if (rowspan <= 1) {
+            var $_data = $(this).children().eq(i);
+            var paddingLeft = parseFloat($_data.css('padding-left'), 10) + leftArray[i];
+            $_data.css('padding-left', paddingLeft + 'px');
+            rowspan = $_data.attr('rowspan') ? $_data.attr('rowspan') : 1;
+          } else {
+            rowspan--;
+          }
         });
 
         i = 0;
-      }
+      // }
 
     });
 
