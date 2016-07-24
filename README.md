@@ -2,6 +2,10 @@
 
 This is a jQuery plugin to fix table columns for horizontal scrolling.
 
+## Requirement
+
+- [jQuery](https://jquery.com/)
+
 ## Usage
 
 ```javascript
@@ -11,7 +15,5 @@ $(table).stickyTableColumns();
 ### Options
 
 ```javascript
-$(table).stickyTableColumns({
-  columns: 2
-});
+$(table).stickyTableColumns({ columns: 2 });
 ```
