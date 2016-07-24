@@ -22,8 +22,8 @@
       );
 
       var $table = $(this);
-      var tableMarginTop = parseInt($table.css('margin-top'));
       var $parent = $(this).parent();
+      var tableMarginTop = parseInt($table.css('margin-top'));
 
       if ($parent.width() < $table.outerWidth()) {
         $table.wrap(
@@ -52,10 +52,10 @@
 
             var $cell = $(this).children().eq(i);
             var height = $cell.height();
+            var verticalAlign = $cell.css('vertical-align');
             var html = $cell.html();
 
             stickyOuterHeightSum += $cell.outerHeight();
-
             topArray.push(stickyOuterHeightSum);
 
             $(this).children().css('height', height + 'px');
@@ -63,14 +63,14 @@
             $(this).children().eq(i)
               .addClass('stickyTableCol-cell')
               .css({
-                width: widthArray[i],
+                // width: widthArray[i],
                 left: leftArray[i],
                 top: topArray[index],
               });
 
             $(this).children().eq(i).html(
-              '<div class="stickyTableCol-cell-inner" style="height:' + height + 'px;">' +
-                '<div class="stickyTableCol-cell-inner-inner">' +
+              '<div class="stickyTableCol-cell-inner" style="height:' + height + 'px; width:' + widthArray[i] + 'px;">' +
+                '<div class="stickyTableCol-cell-inner-inner" style="vertical-align:' + verticalAlign + ';">' +
                   html +
                 '</div>' +
               '</div>'

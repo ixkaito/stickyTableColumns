@@ -18,6 +18,6 @@ td, th {
 	padding: 0.5em;
 }
 
-// td {
-// 	border: 6px solid #f0f;
-// }
+th {
+	text-align: center;
+}
