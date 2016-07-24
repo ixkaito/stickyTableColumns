@@ -14,7 +14,7 @@ table {
 
 td, th {
 	background: #fff;
-	border-top: 1px solid #0ff;
+	border: 1px solid #0ff;
 	padding: 0.5em;
 }
 

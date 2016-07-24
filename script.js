@@ -56,8 +56,6 @@
 
             stickyOuterHeightSum += $cell.outerHeight();
 
-            console.log($cell.outerHeight());
-
             topArray.push(stickyOuterHeightSum);
 
             $(this).children().css('height', height + 'px');
