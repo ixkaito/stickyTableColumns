@@ -1,23 +1,28 @@
-* {
-	margin: 0;
-	padding: 0;
-}
-
 .container {
-	position: relative;
+	max-width: 960px;
+	margin: auto;
 }
 
 table {
 	border-collapse: collapse;
-	margin-top: 2em;
+	// margin-top: 2em;
+	display: block;
+	width: 100%;
+}
+
+tbody {
+	// display: block;
+	width: 100%;
 }
 
 td, th {
 	background: #fff;
-	border: 1px solid #0ff;
+	border: 1px solid #ccc;
 	padding: 0.5em;
+	white-space: nowrap;
 }
 
 th {
-	text-align: center;
+	text-align: left;
+	vertical-align: top;
 }

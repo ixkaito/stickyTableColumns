@@ -25,6 +25,10 @@
       var $parent = $(this).parent();
       var tableMarginTop = parseInt($table.css('margin-top'));
 
+      $table.find('*').css({
+        boxSizing: 'content-box',
+      });
+
       // if ($parent.width() < $table.outerWidth()) {
         $table.wrap(
           '<div class="stickyTableCol-outer-outer">' +
@@ -51,25 +55,61 @@
           $row.each(function(index) {
 
             var $cell = $(this).children().eq(i);
-            var height = $cell.height();
-            var verticalAlign = $cell.css('vertical-align');
             var html = $cell.html();
+            var css = {
+              height: $cell.height(),
+              verticalAlign: $cell.css('vertical-align'),
+              padding: {
+                top:    0,
+                right:  0,
+                bottom: 0,
+                left:   0,
+              },
+              border: {
+                top:    {width: 0},
+                right:  {width: 0},
+                bottom: {width: 0},
+                left:   {width: 0},
+              },
+              top: Math.floor($cell.position().top),
+              left: Math.floor($cell.position().left),
+            };
+
+            console.log(css);
+
+            if ($cell.css('box-sizing') == 'border-box') {
+              css.padding.top    = parseInt($cell.css('padding-top'), 10);
+              css.padding.right  = parseInt($cell.css('padding-right'), 10);
+              css.padding.bottom = parseInt($cell.css('padding-bottom'), 10);
+              css.padding.left   = parseInt($cell.css('padding-left'), 10);
+              css.border.top.width    = parseInt($cell.css('border-top-width'), 10);
+              css.border.right.width  = parseInt($cell.css('border-right-width'), 10);
+              css.border.bottom.width = parseInt($cell.css('border-bottom-width'), 10);
+              css.border.left.width   = parseInt($cell.css('border-left-width'), 10);
+            }
 
             stickyOuterHeightSum += $cell.outerHeight();
             topArray.push(stickyOuterHeightSum);
 
-            $(this).children().css('height', height + 'px');
+            $(this).children().css({
+              height: css.height
+                      + css.padding.top + css.padding.bottom
+                      + css.border.top.width + css.border.bottom.width,
+            });
 
             $(this).children().eq(i)
               .addClass('stickyTableCol-cell')
               .css({
-                left: leftArray[i],
-                top: topArray[index],
+                width: widthArray[i]
+                       + css.padding.left + css.padding.right
+                       + css.border.left.width + css.border.right.width,
+                top: css.top,
+                left: css.left - 1,
               });
 
             $(this).children().eq(i).html(
-              '<div class="stickyTableCol-cell-inner" style="height:' + height + 'px; width:' + widthArray[i] + 'px;">' +
-                '<div class="stickyTableCol-cell-inner-inner" style="vertical-align:' + verticalAlign + ';">' +
+              '<div class="stickyTableCol-cell-inner" style="height:' + css.height + 'px; width:' + widthArray[i] + 'px;">' +
+                '<div class="stickyTableCol-cell-inner-inner" style="vertical-align:' + css.verticalAlign + ';">' +
                   html +
                 '</div>' +
               '</div>'
@@ -100,10 +140,3 @@
   };
 
 })(jQuery);
-
-
-$(function() {
-
-  $('.js-frozen-table-head').stickyTableCol();
-
-});
