@@ -1,0 +1,23 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	position: relative;
+}
+
+table {
+	border-collapse: collapse;
+	margin-top: 2em;
+}
+
+td, th {
+	background: #fff;
+	border-top: 1px solid #0ff;
+	padding: 0.5em;
+}
+
+// td {
+// 	border: 6px solid #f0f;
+// }
