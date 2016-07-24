@@ -8,7 +8,7 @@ This is a jQuery plugin to fix table columns for horizontal scrolling.
 $(table).stickyTableColumns();
 ```
 
-### Option
+### Options
 
 ```javascript
 $(table).stickyTableColumns({
