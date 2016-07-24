@@ -1,6 +1,6 @@
-# Stick Table Columns
+# Sticky Table Columns
 
-Fix table columns for horizontal scrolling.
+This is a jQuery plugin to fix table columns for horizontal scrolling.
 
 ## Usage
 
