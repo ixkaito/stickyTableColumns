@@ -23,6 +23,21 @@
 
 	<!-- Lightbox -->
 	<link href="http://movie-stage.alaki-sandbox.com/stage/assets/css/boxer/jquery.fs.boxer.css" rel="stylesheet">
+	<style>
+		.table._bordered {
+			/*border: 1px solid #ddd;*/
+		}
+		.table._bordered thead th,
+		.table._bordered thead td,
+		.table._bordered th,
+		.table._bordered td {
+			border: 1px solid #ddd !important;
+		}
+		.table._bordered thead th,
+		.table._bordered thead td {
+			/*border-bottom-width: 2px !important;*/
+		}
+	</style>
 </head>
 <body>
 <div class="module-container course actors">
@@ -41,6 +56,65 @@
 									<h4 class="box-ttl">カリキュラム例（基本）</h4>
 									<div class="curriculum-table">
 										<table class="table table-bordered js-sticky-table-column">
+											<thead>
+												<tr>
+													<th class="th-fixed"></th>
+													<th>月</th>
+													<th>火</th>
+													<th>水</th>
+													<th>木</th>
+													<th>金</th>
+													<th>土</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<th scope="row" class="th-fixed">1限:9:10~10:40</th>
+													<td></td>
+													<td>開口発声</td>
+													<td>開口発声</td>
+													<td>開口発声</td>
+													<td>開口発声</td>
+													<td></td>
+												</tr>
+												<tr>
+													<th scope="row" class="th-fixed">2限:10:40~12:20</th>
+													<td rowspan="3">チーム映画制作</td>
+													<td rowspan="2">舞台演技</td>
+													<td></td>
+													<td>ヴォイストレーニング</td>
+													<td></td>
+													<td></td>
+												</tr>
+												<tr>
+													<th scope="row" class="th-fixed">3限:12:30~14:00</th>
+													<td rowspan="2">映像実践(映像演技)</td>
+													<td>ヴォイスアクティング</td>
+													<td>クラシックバレエ</td>
+													<td rowspan="3">自主映画制作・北村監督ゼミ・津川ゼミ・上映会</td>
+												</tr>
+												<tr>
+													<th scope="row" class="th-fixed">4限:14:10~15:40</th>
+													<td>アクティング</td>
+													<td></td>
+													<td>キャリアプログラム</td>
+												</tr>
+												<tr>
+													<th scope="row" class="th-fixed">5限:15:50~17:20</th>
+													<td></td>
+													<td>歌唱アンサンブル</td>
+													<td></td>
+													<td></td>
+													<td></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="module__inner__box">
+									<h4 class="box-ttl">カリキュラム例（基本）</h4>
+									<div class="curriculum-table">
+										<table class="table _bordered js-sticky-table-column">
 											<thead>
 												<tr>
 													<th class="th-fixed"></th>
@@ -317,6 +391,7 @@
 	<!--高さをそろえるjs-->
 	<script type="text/javascript" src="http://movie-stage.alaki-sandbox.com/stage/assets/js/jquery.matchHeight.js"></script>
 	<script src="jquery.stickyTableCol.js"></script>
+	<script src="fixedTblHdrLftCol.js"></script>
 	<script type="text/javascript">
 	$(function() {
 		$('.item__img').matchHeight('');

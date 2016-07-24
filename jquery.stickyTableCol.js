@@ -26,7 +26,7 @@
       var tableMarginTop = parseInt($table.css('margin-top'));
 
       $table.find('*').css({
-        boxSizing: 'content-box',
+        boxSizing: 'border-box',
       });
 
       // if ($parent.width() < $table.outerWidth()) {
@@ -58,53 +58,65 @@
             var html = $cell.html();
             var css = {
               height: $cell.height(),
+              outerHeight: $cell.outerHeight(),
+              outerWidth: $cell.outerWidth(),
               verticalAlign: $cell.css('vertical-align'),
               padding: {
-                top:    0,
-                right:  0,
-                bottom: 0,
-                left:   0,
+                top:    parseInt($cell.css('padding-top'), 10),
+                right:  parseInt($cell.css('padding-right'), 10),
+                bottom: parseInt($cell.css('padding-bottom'), 10),
+                left:   parseInt($cell.css('padding-left'), 10),
               },
               border: {
-                top:    {width: 0},
-                right:  {width: 0},
-                bottom: {width: 0},
-                left:   {width: 0},
+                top:    {width: parseInt($cell.css('border-top-width'), 10)},
+                right:  {width: parseInt($cell.css('border-right-width'), 10)},
+                bottom: {width: parseInt($cell.css('border-bottom-width'), 10)},
+                left:   {width: parseInt($cell.css('border-left-width'), 10)},
               },
-              top: Math.floor($cell.position().top),
-              left: Math.floor($cell.position().left),
+              // top: Math.round($cell.position().top),
+              // left: Math.round($cell.position().left),
+              top: topArray[index],
+              left: leftArray[i],
             };
 
-            console.log(css);
 
-            if ($cell.css('box-sizing') == 'border-box') {
-              css.padding.top    = parseInt($cell.css('padding-top'), 10);
-              css.padding.right  = parseInt($cell.css('padding-right'), 10);
-              css.padding.bottom = parseInt($cell.css('padding-bottom'), 10);
-              css.padding.left   = parseInt($cell.css('padding-left'), 10);
-              css.border.top.width    = parseInt($cell.css('border-top-width'), 10);
-              css.border.right.width  = parseInt($cell.css('border-right-width'), 10);
-              css.border.bottom.width = parseInt($cell.css('border-bottom-width'), 10);
-              css.border.left.width   = parseInt($cell.css('border-left-width'), 10);
-            }
+            console.log(css.pt + '/' + css.top);
+
+            // if ($cell.css('box-sizing') == 'border-box') {
+              // css.padding.top    = parseInt($cell.css('padding-top'), 10);
+              // css.padding.right  = parseInt($cell.css('padding-right'), 10);
+              // css.padding.bottom = parseInt($cell.css('padding-bottom'), 10);
+              // css.padding.left   = parseInt($cell.css('padding-left'), 10);
+              // css.border.top.width    = parseInt($cell.css('border-top-width'), 10);
+              // css.border.right.width  = parseInt($cell.css('border-right-width'), 10);
+              // css.border.bottom.width = parseInt($cell.css('border-bottom-width'), 10);
+              // css.border.left.width   = parseInt($cell.css('border-left-width'), 10);
+            // }
 
             stickyOuterHeightSum += $cell.outerHeight();
             topArray.push(stickyOuterHeightSum);
 
-            $(this).children().css({
-              height: css.height
-                      + css.padding.top + css.padding.bottom
-                      + css.border.top.width + css.border.bottom.width,
-            });
+            // $(this).children().each(function(index) {
+            //   if (!$(this).attr(rowspan)) {
+            //     $(this).css({
+            //       // height: css.height
+            //       //         + css.padding.top + css.padding.bottom
+            //       //         + css.border.top.width + css.border.bottom.width,
+            //       height: css.outerHeight,
+            //     });
+            //   }
+            // });
+
 
             $(this).children().eq(i)
               .addClass('stickyTableCol-cell')
               .css({
-                width: widthArray[i]
-                       + css.padding.left + css.padding.right
-                       + css.border.left.width + css.border.right.width,
+                // width: widthArray[i]
+                //        + css.padding.left + css.padding.right
+                //        + css.border.left.width + css.border.right.width,
+                width: css.outerWidth,
                 top: css.top,
-                left: css.left - 1,
+                left: css.left,
               });
 
             $(this).children().eq(i).html(
