@@ -27,9 +27,9 @@
         left:   $table.css('margin-left'),
       };
 
-      $table.wrap('<div class="stickyTableCol-outer"><div class="stickyTableCol-scroll"></div></div>');
-      var $scroll = $table.parent('.stickyTableCol-scroll');
-      var $outer = $scroll.parent('.stickyTableCol-outer');
+      $table.wrap('<div class="stickyTableColumns-outer"><div class="stickyTableColumns-scroll"></div></div>');
+      var $scroll = $table.parent('.stickyTableColumns-scroll');
+      var $outer = $scroll.parent('.stickyTableColumns-outer');
 
       $table.css( {
         margin: 0,
@@ -48,6 +48,7 @@
       });
 
       var timer = false;
+      var $clone, $row, $cell, i, stickyColWidth;
 
       $(window).on('load resize', function() {
 
@@ -55,24 +56,24 @@
           clearTimeout(timer);
         }
 
-        $outer.find('.stickyTableCol-clone').remove();
+        $outer.find('.stickyTableColumns-clone').remove();
 
         timer = setTimeout(function() {
 
           $table.clone().appendTo($outer)
-            .wrap('<div class="stickyTableCol-clone"><div class="stickyTableCol-clone-inner"></div></div>');
+            .wrap('<div class="stickyTableColumns-clone"><div class="stickyTableColumns-clone-inner"></div></div>');
 
-          var $clone = $outer.find('.stickyTableCol-clone');
+          $clone = $outer.find('.stickyTableColumns-clone');
 
-          $clone.find('.stickyTableCol-clone-inner').css({
+          $clone.find('.stickyTableColumns-clone-inner').css({
             width: $table.outerWidth(),
           });
 
-          var $row = $table.find('tr');
-          var $cell = $row.eq(0).children();
+          $row = $table.find('tr');
+          $cell = $row.eq(0).children();
 
-          var i = 0;
-          var stickyColWidth = 0;
+          i = 0;
+          stickyColWidth = 0;
 
           while (i < settings.colomuns) {
             stickyColWidth += $cell.eq(i).outerWidth();
