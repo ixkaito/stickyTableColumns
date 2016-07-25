@@ -5,7 +5,7 @@
  * Author: Kite@ixkaito
  * Licence: MIT
  */
-;(function($, undefined){
+(function($, undefined){
 
   "use strict";
 
