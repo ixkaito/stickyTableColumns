@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sticky Table Columns jQuery Plugin Demo</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<style>
+		.table {
+			background: #fff;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+<h1>Styicky Table Columns jQuery Plugin Demo</h1>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Lorem ipsum.</th>
+				<th>Ex, iure.</th>
+				<th>Hic, illum!</th>
+				<th>Accusantium, quibusdam.</th>
+				<th>Delectus, consequatur.</th>
+				<th>Velit, sunt.</th>
+				<th>Harum, neque.</th>
+				<th>Repudiandae, eos.</th>
+				<th>Ducimus, ullam!</th>
+				<th>Ipsam, totam.</th>
+				<th>Voluptate, molestias!</th>
+				<th>Suscipit, inventore.</th>
+				<th>Itaque, perferendis!</th>
+				<th>Amet, culpa.</th>
+				<th>Ex, sit?</th>
+				<th>Perspiciatis, iste!</th>
+				<th>Enim, fugit!</th>
+				<th>Quibusdam, tempore.</th>
+				<th>Perferendis, magnam!</th>
+				<th>Quas, laborum!</th>
+			</tr>
+		</thead>
+		<tr>
+			<th>Lorem ipsum dolor.</th>
+			<td>Harum, voluptatum, nobis!</td>
+			<td>In, nostrum, quam.</td>
+			<td>Alias, ratione. Consectetur.</td>
+			<td>Natus, dicta, amet.</td>
+			<td>Praesentium, numquam, esse.</td>
+			<td>Officiis quas, praesentium.</td>
+			<td>Accusamus, aperiam praesentium!</td>
+			<td>Eos, porro, ut!</td>
+			<td>Nesciunt, assumenda, nobis.</td>
+			<td>Fuga, numquam, laboriosam.</td>
+			<td>Deleniti, dignissimos, dolor.</td>
+			<td>Nobis, asperiores, laudantium.</td>
+			<td>Placeat, quas, veritatis!</td>
+			<td>Explicabo, quasi, deserunt.</td>
+			<td>Magni, impedit, esse.</td>
+			<td>Minus, explicabo harum?</td>
+			<td>Velit, illum, tenetur.</td>
+			<td>Excepturi, magni, omnis.</td>
+			<td>Quaerat, est beatae!</td>
+		</tr>
+		<tr>
+			<th>Lorem ipsum dolor.</th>
+			<td>Harum, voluptatum, nobis!</td>
+			<td>In, nostrum, quam.</td>
+			<td>Alias, ratione. Consectetur.</td>
+			<td>Natus, dicta, amet.</td>
+			<td>Praesentium, numquam, esse.</td>
+			<td>Officiis quas, praesentium.</td>
+			<td>Accusamus, aperiam praesentium!</td>
+			<td>Eos, porro, ut!</td>
+			<td>Nesciunt, assumenda, nobis.</td>
+			<td>Fuga, numquam, laboriosam.</td>
+			<td>Deleniti, dignissimos, dolor.</td>
+			<td>Nobis, asperiores, laudantium.</td>
+			<td>Placeat, quas, veritatis!</td>
+			<td>Explicabo, quasi, deserunt.</td>
+			<td>Magni, impedit, esse.</td>
+			<td>Minus, explicabo harum?</td>
+			<td>Velit, illum, tenetur.</td>
+			<td>Excepturi, magni, omnis.</td>
+			<td>Quaerat, est beatae!</td>
+		</tr>
+	</table>
+	<table class="table table-bordered table-striped sticky-2">
+		<thead>
+			<tr>
+				<th>Lorem ipsum.</th>
+				<th>Ex, iure.</th>
+				<th>Hic, illum!</th>
+				<th>Accusantium, quibusdam.</th>
+				<th>Delectus, consequatur.</th>
+				<th>Velit, sunt.</th>
+				<th>Harum, neque.</th>
+				<th>Repudiandae, eos.</th>
+				<th>Ducimus, ullam!</th>
+				<th>Ipsam, totam.</th>
+				<th>Voluptate, molestias!</th>
+				<th>Suscipit, inventore.</th>
+				<th>Itaque, perferendis!</th>
+				<th>Amet, culpa.</th>
+				<th>Ex, sit?</th>
+				<th>Perspiciatis, iste!</th>
+				<th>Enim, fugit!</th>
+				<th>Quibusdam, tempore.</th>
+				<th>Perferendis, magnam!</th>
+				<th>Quas, laborum!</th>
+			</tr>
+		</thead>
+		<tr>
+			<th>Lorem ipsum dolor.</th>
+			<th>Harum, voluptatum, nobis!</th>
+			<td>In, nostrum, quam.</td>
+			<td>Alias, ratione. Consectetur.</td>
+			<td>Natus, dicta, amet.</td>
+			<td>Praesentium, numquam, esse.</td>
+			<td>Officiis quas, praesentium.</td>
+			<td>Accusamus, aperiam praesentium!</td>
+			<td>Eos, porro, ut!</td>
+			<td>Nesciunt, assumenda, nobis.</td>
+			<td>Fuga, numquam, laboriosam.</td>
+			<td>Deleniti, dignissimos, dolor.</td>
+			<td>Nobis, asperiores, laudantium.</td>
+			<td>Placeat, quas, veritatis!</td>
+			<td>Explicabo, quasi, deserunt.</td>
+			<td>Magni, impedit, esse.</td>
+			<td>Minus, explicabo harum?</td>
+			<td>Velit, illum, tenetur.</td>
+			<td>Excepturi, magni, omnis.</td>
+			<td>Quaerat, est beatae!</td>
+		</tr>
+		<tr>
+			<th>Lorem ipsum dolor.</th>
+			<th>Harum, voluptatum, nobis!</th>
+			<td>In, nostrum, quam.</td>
+			<td>Alias, ratione. Consectetur.</td>
+			<td>Natus, dicta, amet.</td>
+			<td>Praesentium, numquam, esse.</td>
+			<td>Officiis quas, praesentium.</td>
+			<td>Accusamus, aperiam praesentium!</td>
+			<td>Eos, porro, ut!</td>
+			<td>Nesciunt, assumenda, nobis.</td>
+			<td>Fuga, numquam, laboriosam.</td>
+			<td>Deleniti, dignissimos, dolor.</td>
+			<td>Nobis, asperiores, laudantium.</td>
+			<td>Placeat, quas, veritatis!</td>
+			<td>Explicabo, quasi, deserunt.</td>
+			<td>Magni, impedit, esse.</td>
+			<td>Minus, explicabo harum?</td>
+			<td>Velit, illum, tenetur.</td>
+			<td>Excepturi, magni, omnis.</td>
+			<td>Quaerat, est beatae!</td>
+		</tr>
+	</table>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Lorem ipsum.</th>
+				<th>Ex, iure.</th>
+				<th>Hic, illum!</th>
+				<th>Accusantium, quibusdam.</th>
+				<th>Delectus, consequatur.</th>
+				<th>Velit, sunt.</th>
+				<th>Harum, neque.</th>
+				<th>Repudiandae, eos.</th>
+				<th>Ducimus, ullam!</th>
+				<th>Ipsam, totam.</th>
+				<th>Voluptate, molestias!</th>
+				<th>Suscipit, inventore.</th>
+				<th>Itaque, perferendis!</th>
+				<th>Amet, culpa.</th>
+				<th>Ex, sit?</th>
+				<th>Perspiciatis, iste!</th>
+				<th>Enim, fugit!</th>
+				<th>Quibusdam, tempore.</th>
+				<th>Perferendis, magnam!</th>
+				<th>Quas, laborum!</th>
+			</tr>
+		</thead>
+		<tr>
+			<th>Lorem ipsum dolor.</th>
+			<td rowspan="2">Harum, voluptatum, nobis!</td>
+			<td>In, nostrum, quam.</td>
+			<td rowspan="2">Alias, ratione. Consectetur.</td>
+			<td>Natus, dicta, amet.</td>
+			<td rowspan="2">Praesentium, numquam, esse.</td>
+			<td>Officiis quas, praesentium.</td>
+			<td>Accusamus, aperiam praesentium!</td>
+			<td rowspan="2">Eos, porro, ut!</td>
+			<td>Nesciunt, assumenda, nobis.</td>
+			<td>Fuga, numquam, laboriosam.</td>
+			<td rowspan="2">Deleniti, dignissimos, dolor.</td>
+			<td>Nobis, asperiores, laudantium.</td>
+			<td>Placeat, quas, veritatis!</td>
+			<td rowspan="2">Explicabo, quasi, deserunt.</td>
+			<td>Magni, impedit, esse.</td>
+			<td>Minus, explicabo harum?</td>
+			<td rowspan="2">Velit, illum, tenetur.</td>
+			<td>Excepturi, magni, omnis.</td>
+			<td>Quaerat, est beatae!</td>
+		</tr>
+		<tr>
+			<th>Accusamus, aperiam praesentium!</th>
+			<td>Eos, porro, ut!</td>
+			<td>Nesciunt, assumenda, nobis.</td>
+			<td>Fuga, numquam, laboriosam.</td>
+			<td>Deleniti, dignissimos, dolor.</td>
+			<td>Nobis, asperiores, laudantium.</td>
+			<td>Placeat, quas, veritatis!</td>
+			<td>Explicabo, quasi, deserunt.</td>
+			<td>Magni, impedit, esse.</td>
+			<td>Minus, explicabo harum?</td>
+			<td>Velit, illum, tenetur.</td>
+			<td>Excepturi, magni, omnis.</td>
+			<td>Quaerat, est beatae!</td>
+		</tr>
+	</table>
+	<footer>
+		<p class="text-right"><a href="https://github.com/ixkaito/stickyTableColumns">GitHub Repo</a></p>
+	</footer>
+</div>
+<script src="jquery.stickyTableColumns.min.js"></script>
+<script>
+$(function() {
+	$('.table').stickyTableColumns();
+	$('.sticky-2').stickyTableColumns({columns: 2});
+});
+</script>
+</body>
+</html>
