@@ -23,7 +23,7 @@
     "url": "https://github.com/ixkaito/stickyTableColumns/issues"
   },
   "homepage": "https://github.com/ixkaito/stickyTableColumns#readme",
-  "devDependencies": {
+  "dependencies": {
     "jquery": "*"
   }
 }
