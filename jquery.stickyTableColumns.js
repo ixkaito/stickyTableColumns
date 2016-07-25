@@ -54,6 +54,7 @@
       });
 
       var timer = false;
+      var windowWidth = 0;
       var $clone, $row, $cell, i, stickyColWidth;
 
       $(window).on('load resize', function() {
@@ -62,37 +63,43 @@
           clearTimeout(timer);
         }
 
-        $outer.find('.stickyTableColumns-clone').remove();
-
         timer = setTimeout(function() {
 
-          $table.clone().appendTo($outer)
-            .wrap('<div class="stickyTableColumns-clone"><div class="stickyTableColumns-clone-inner"></div></div>');
+          if (windowWidth != $(window).width()) {
 
-          $clone = $outer.find('.stickyTableColumns-clone');
+            $outer.find('.stickyTableColumns-clone').remove();
 
-          $clone.find('.stickyTableColumns-clone-inner').css({
-            width: $table.outerWidth(),
-          });
+            $table.clone().appendTo($outer)
+              .wrap('<div class="stickyTableColumns-clone"><div class="stickyTableColumns-clone-inner"></div></div>');
 
-          $row = $table.find('tr');
-          $cell = $row.eq(0).children();
+            $clone = $outer.find('.stickyTableColumns-clone');
 
-          i = 0;
-          stickyColWidth = 0;
+            $clone.find('.stickyTableColumns-clone-inner').css({
+              width: $table.outerWidth(),
+            });
 
-          while (i < settings.columns) {
-            stickyColWidth += $cell.eq(i).outerWidth();
-            i++;
+            $row = $table.find('tr');
+            $cell = $row.eq(0).children();
+
+            i = 0;
+            stickyColWidth = 0;
+
+            while (i < settings.columns) {
+              stickyColWidth += $cell.eq(i).outerWidth();
+              i++;
+            }
+
+            $clone.css({
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              overflow: 'hidden',
+              width: stickyColWidth + 1,
+            });
+
+            windowWidth = $(window).width();
+
           }
-
-          $clone.css({
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            overflow: 'hidden',
-            width: stickyColWidth + 1,
-          });
 
         }, 200);
 
