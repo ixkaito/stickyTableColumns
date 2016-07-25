@@ -5,14 +5,14 @@
  * Author: Kite@ixkaito
  * Licence: MIT
  */
-;(function($, undefined){
+(function($, undefined){
 
   "use strict";
 
   $.fn.stickyTableColumns = function(options) {
 
     var defaults = {
-      colomuns: 1,
+      columns: 1,
     };
 
     var settings = $.extend(true, {}, defaults, options);
@@ -75,7 +75,7 @@
           i = 0;
           stickyColWidth = 0;
 
-          while (i < settings.colomuns) {
+          while (i < settings.columns) {
             stickyColWidth += $cell.eq(i).outerWidth();
             i++;
           }
