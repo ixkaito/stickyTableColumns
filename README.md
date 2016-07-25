@@ -17,3 +17,7 @@ $('table').stickyTableColumns();
 ```javascript
 $('table').stickyTableColumns({ columns: 2 });
 ```
+
+## Demo
+
+https://ixkaito.github.io/stickyTableColumns/
