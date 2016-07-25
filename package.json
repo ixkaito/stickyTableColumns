@@ -1,6 +1,6 @@
 {
   "name": "stickytablecolumns",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "This is a jQuery plugin to fix table columns for horizontal scrolling. Responsive support.",
   "main": "jquery.stickyTableColumns.min.js",
   "scripts": {
